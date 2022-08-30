@@ -14,6 +14,7 @@ Trackgenix is a powerfull web system that facilitates the recording of hours wor
 
 ### Week 01
 
-On the first week I developed the HTML structure of the site using the best practice.
+On the first week I developed the basic HTML structure of the site using the best practice.
+I used white icons downloaded from the Figma project and due to the problem they will not be displayed in the browser.
 
 _By Darío Marañes_
