@@ -1,0 +1,21 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #41426F;
+}
+
+header {
+    width: 1512px;
+    height: 120px;
+    background-color: #41426F;
+    position:fixed;
+}
+
+header h1{
+    margin-top: 36px;
+    margin-left: 32px;
+    font-style: normal;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 47px;
+    color: #FFFFFF;
+}
