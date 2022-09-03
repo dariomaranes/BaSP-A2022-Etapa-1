@@ -18,18 +18,32 @@
             Trackgenix
         </h1>
     </header>
-    <main>
-        <aside>
-            <h2>
-                Menu
-            </h2>
-            <input type="search" placeholder="Search">
-            <input type="button" value="Home">
-            <input type="button" value="Login">
-            <input type="button" value="SingUp">
-            <h4>
+    <aside>
+        <h2>
+            Menu
+        </h2>
+        <input type="search" placeholder="Search">
+        <nav>
+            <ul>
+                <li>
+                    <a href="http://home.html">Home</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="http://login.html">Login</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="http://singup.html">SingUp</a>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <h3>
                 Get in touch
-            </h4>
+            </h3>
             <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -44,7 +58,9 @@
             <address>
                 information@untitled.tld
             </address>
-        </aside>
+        </section>
+    </aside>
+    <main>
         <section id="intro">
             <h2>
                 Trackgenix
@@ -70,48 +86,64 @@
         </section>
         <section id="features">
             <div>
-                <img src="../Semana-03/assets/img/alert-icon.png" alt="Alert">
-                <h3>
-                    Reports
-                </h3>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                    been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                    a galley of type and scrambled it to make a type specimen book.
-                </p>
+                <div>
+                    <img src="../Semana-03/assets/img/alert-icon.png" alt="Alert">
+                </div>
+                <div>
+                    <h3>
+                        Reports
+                    </h3>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+                        a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                </div>
             </div>
             <div>
-                <img src="../Semana-03/assets/img/group-icon.png" alt="Group">
-                <h3>
-                    Resource management
-                </h3>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                    been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                    a galley of type and scrambled it to make a type specimen book.
-                </p>
+                <div>
+                    <img src="../Semana-03/assets/img/group-icon.png" alt="Group">
+                </div>
+                <div>
+                    <h3>
+                        Resource management
+                    </h3>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+                        a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                </div>
             </div>
             <div>
-                <img src="../Semana-03/assets/img/alarm-icon.png" alt="Alarm">
-                <h3>
-                    Time Registration
-                </h3>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                    been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                    a galley of type and scrambled it to make a type specimen book.
-                </p>
+                <div>
+                    <img src="../Semana-03/assets/img/alarm-icon.png" alt="Alarm">
+                </div>
+                <div>
+                    <h3>
+                        Time Registration
+                    </h3>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+                        a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                </div>
             </div>
             <div>
-                <img src="../Semana-03/assets/img/tags-icon.png" alt="Tags">
-                <h3>
-                    Multiple Roles
-                </h3>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                    been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                    a galley of type and scrambled it to make a type specimen book.
-                </p>
+                <div>
+                    <img src="../Semana-03/assets/img/tags-icon.png" alt="Tags">
+                </div>
+                <div>
+                    <h3>
+                        Multiple Roles
+                    </h3>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+                        a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                </div>
             </div>
         </section>
         <section id="why-use">
@@ -145,32 +177,29 @@
                 or ways to solve different life situations.
             </p>
         </section>
-        <section id="form">
-            <form action="">
-                <label>
+        <form>
+                <label for="name">
                     Name
                 </label>
-                <input type="text">
-                <label>
+                <input type="text" id="name">
+                <label for="email">
                     Email
                 </label>
-                <input type="email">
-                <label>
+                <input type="email" id="email">
+                <label for="category">
                     Plase choose
                 </label>
-                <select>
-                    <option>Options</option>
-                    <option>Systems</option>
-                    <option>Business</option>
-                    <option>Human Resources</option>
+                <select name="category" id="category">
+                    <option value="systems">Systems</option>
+                    <option value="business">Business</option>
+                    <option value="human-resources">Human Resources</option>
                 </select>
                 <label>
                     Message
                 </label>
                 <textarea placeholder="Enter your message" cols="30" rows="10"></textarea>
-                <input type="button" value="Send">
-            </form>
-        </section>
+                <button type="submit">Send</button>
+        </form>
         <section id="about">
             <h2>
                 About us
@@ -199,57 +228,63 @@
             </p>
         </section>
         <section id="links">
-            <h2>
-                Products
-            </h2>
-            <ul>
-                <li>
-                    <a href="http://">Functionalities</a>
-                </li>
-                <li>
-                    <a href="http://">Downloads</a>
-                </li>
-                <li>
-                    <a href="http://">Integrations</a>
-                </li>
-                <li>
-                    <a href="http://">Extras</a>
-                </li>
-            </ul>
-            <h2>
-                Company
-            </h2>
-            <ul>
-                <li>
-                    <a href="http://">About Us</a>
-                </li>
-                <li>
-                    <a href="http://">Customers</a>
-                </li>
-                <li>
-                    <a href="http://">Resources</a>
-                </li>
-                <li>
-                    <a href="http://">Blog</a>
-                </li>
-            </ul>
-            <h2>
-                Support
-            </h2>
-            <ul>
-                <li>
-                    <a href="http://">Help</a>
-                </li>
-                <li>
-                    <a href="http://">Tutorials</a>
-                </li>
-                <li>
-                    <a href="http://">API</a>
-                </li>
-                <li>
-                    <a href="http://">Contact</a>
-                </li>
-            </ul>
+            <div>
+                <h2>
+                    Products
+                </h2>
+                <ul>
+                    <li>
+                        <a href="http://functionalities.html">Functionalities</a>
+                    </li>
+                    <li>
+                        <a href="http://downloads.html">Downloads</a>
+                    </li>
+                    <li>
+                        <a href="http://integrations.html">Integrations</a>
+                    </li>
+                    <li>
+                        <a href="http://extras.html">Extras</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2>
+                    Company
+                </h2>
+                <ul>
+                    <li>
+                        <a href="http://about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="http://customers.html">Customers</a>
+                    </li>
+                    <li>
+                        <a href="http://resources.html">Resources</a>
+                    </li>
+                    <li>
+                        <a href="http://blog.html">Blog</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2>
+                    Support
+                </h2>
+                <ul>
+                    <li>
+                        <a href="http://help.html">Help</a>
+                    </li>
+                    <li>
+                        <a href="http://tutorials.html">Tutorials</a>
+                    </li>
+                    <li>
+                        <a href="http://api.html">API</a>
+                    </li>
+                    <li>
+                        <a href="http://contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </section>
     </main>
     <footer>
