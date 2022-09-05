@@ -22,7 +22,7 @@ header h1{
 
 aside{
     margin-top: 120px;
-    width: 288px;
+    width: 20%;
     height: 959px;
     float: left;
     position: fixed;
@@ -71,9 +71,12 @@ nav ul li{
     margin-bottom: 60px;
 }
 
+a{
+    text-decoration: none;
+}
+
 nav ul li a{
     text-align: center;
-    text-decoration: none;
     font-weight: 700;
     font-size: 15px;
     line-height: 18px;
@@ -120,6 +123,87 @@ nav ul li a{
 }
 
 section div ul li a{
-    text-decoration: none;
+    color: #FFFFFF;
+}
+
+main{
+    float: right;
+    margin-top: 120px;
+    width: 80%;
+}
+
+main section{
+    margin: 70px 55px;
+}
+
+main form{
+    margin: 70px 55px;
+}
+
+.border-blue{
+    border-top: 3px solid #373867;
+    border-bottom: 3px solid #373867;
+}
+
+.main-text{
+    display: inline-block;
+    width: 45%;
+}
+
+.main-title{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    color: #373867;
+}
+
+.main-subtitle{
+    margin-top: 12px;
+    text-transform: uppercase;
+}
+
+.main-p{
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 25px;
+    width: 411px;
+    margin-top: 12px;
+    margin-bottom: 22px;
+}
+
+.main-img{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: inline-block;
+    width: 50%;
+}
+
+.img-border-radius{
+    border-radius: 5px;
+}
+
+.btn-main{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #000000;
+    margin-left: 285px;
+}
+
+.btn-main:hover{
+    background: #AACE9B;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
     color: #FFFFFF;
 }
