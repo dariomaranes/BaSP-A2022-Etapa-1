@@ -486,3 +486,28 @@ textarea{
 .vertical-line{
     border-left: 3px solid #373867;
 }
+
+footer{
+    float: right;
+    width: 1267px;
+    height: 147px;
+    background-color: #41426F;
+}
+
+footer div{
+    margin-left: 370px;
+    margin-top: 20px;
+}
+
+footer div a img{
+    margin-left: 96px;
+}
+
+footer p{
+    margin-top: 42px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+}
