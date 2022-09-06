@@ -21,4 +21,8 @@ I prototyped the interface of Trackgenix web system using Figma.
 I developed the basic HTML structure of the site using the best practice.
 I used white icons downloaded from the Figma project and due to the problem they will not be displayed in the browser.
 
+### Week 03
+
+I applioed CSS to HTML structure and did structural changes on it relationed with the styles.
+
 _By Darío Marañes_
