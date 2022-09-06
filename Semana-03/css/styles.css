@@ -409,3 +409,46 @@ textarea{
     margin-left: 300px;
     margin-top: 13px;
 }
+
+.about{
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.about-content{
+    float: left;
+    width: 40%;
+    margin-top: 45px;
+    margin-left: 20px;
+}
+
+.about img{
+    margin-top: 45px;
+    margin-bottom: 35px;
+    float: right;
+    width: 57%;
+}
+
+.about h2{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #373867;
+}
+
+.about-content p{
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    padding-right: 30px;
+    margin-bottom: 30px;
+}
+
+.about-p{
+    float: left;
+    font-size: 24px;
+    line-height: 28px;
+    margin-left: 20px;
+}
