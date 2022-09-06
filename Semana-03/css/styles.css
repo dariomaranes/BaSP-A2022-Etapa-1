@@ -216,10 +216,10 @@ section{
     margin-top: 50px;
     width: 36%;
     margin-left: 90px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 
-.main-features-h3{
+.main-features h3{
     font-weight: 700;
     font-size: 27px;
     line-height: 60px;
@@ -227,7 +227,7 @@ section{
     display: inline-block;
 }
 
-.main-features-p{
+.main-features p{
     font-weight: 700;
     font-size: 14px;
     line-height: 16px;
@@ -235,7 +235,7 @@ section{
     margin-left: 70px;
 }
 
-.main-features-img{
+.main-features img{
     float:left;
     margin-right: 10px;
 }
