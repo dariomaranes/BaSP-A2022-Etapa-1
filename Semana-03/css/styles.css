@@ -150,10 +150,6 @@ main section{
     margin: 45px 55px;
 }
 
-main form{
-    margin: 0px 0px;
-}
-
 section{
     border-top: 3px solid #373867;
 }
@@ -163,7 +159,7 @@ section{
     width: 45%;
 }
 
-.main-title{
+.intro h2{
     text-transform: uppercase;
     font-weight: 700;
     font-size: 30px;
@@ -171,12 +167,12 @@ section{
     color: #373867;
 }
 
-.main-subtitle{
+.intro h3{
     margin-top: 12px;
     text-transform: uppercase;
 }
 
-.main-p{
+.intro p{
     font-weight: 400;
     font-size: 21px;
     line-height: 25px;
@@ -221,7 +217,7 @@ section{
     color: #FFFFFF;
 }
 
-.main-features{
+.main-features div{
     display: inline-block;
     margin-top: 50px;
     margin-bottom: 20px;
@@ -230,7 +226,7 @@ section{
     padding-bottom: 20px;
 }
 
-.main-features h3{
+.main-features div h3{
     font-weight: 700;
     font-size: 27px;
     line-height: 60px;
@@ -238,7 +234,7 @@ section{
     display: inline-block;
 }
 
-.main-features p{
+.main-features div p{
     font-weight: 700;
     font-size: 14px;
     line-height: 16px;
@@ -246,7 +242,7 @@ section{
     margin-left: 70px;
 }
 
-.main-features img{
+.main-features div img{
     float:left;
     margin-right: 10px;
 }
