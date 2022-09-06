@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: #41426F;
@@ -140,9 +144,8 @@ main form{
     margin: 70px 55px;
 }
 
-.border-blue{
+section{
     border-top: 3px solid #373867;
-    border-bottom: 3px solid #373867;
 }
 
 .main-text{
@@ -210,6 +213,7 @@ main form{
 
 .main-features{
     display: inline-block;
+    margin-top: 50px;
     width: 36%;
     margin-left: 90px;
     padding-bottom: 50px;
@@ -235,3 +239,45 @@ main form{
     float:left;
     margin-right: 10px;
 }
+
+.why-use h2{
+    width: 1500px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 47px;
+    margin-top: 40px;
+    border-bottom: 2px solid #373867;
+    width: 371px;
+    color: #373867;
+}
+
+.why-use article{
+    display: inline-block;
+    margin-top: 50px;
+    width: 41%;
+    margin-left: 60px;
+    padding-bottom: 20px;
+}
+
+.why-use h4{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
+    color: #373867;
+    display: inline-block;
+}
+
+.why-use p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #373867;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.why-use-img{
+    float:left;
+    margin-right: 10px;
+}
+
