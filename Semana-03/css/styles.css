@@ -281,3 +281,116 @@ section{
     margin-right: 10px;
 }
 
+.contact-form form{
+    width: 572px;
+    height: 465px;
+    margin: 25px auto;
+    background: #AACE9B;
+    border-radius: 20px;
+}
+
+textarea{
+    font-family: 'Roboto', sans-serif;
+}
+
+.input-contact{
+    display: inline-block;
+    width: 260px;
+    padding-left: 22px;
+    margin-top: 29px;
+}
+
+.input-contact label{
+    display: block;
+    padding-bottom: 5px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.input-contact input{
+    width: 260px;
+    height: 37px;
+    background-color: transparent;
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+.input-area{
+    display: inline-block;
+    width: 520px;
+    padding-left: 22px;
+    margin-top: 20px;
+}
+
+.input-area label{
+    display: block;
+    padding-bottom: 5px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.input-area select{
+    display: inline-block;
+    width: 525px;
+    height: 37px;
+    background-color: transparent;
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+.input-message{
+    padding-left: 22px;
+    margin-top: 105px;
+}
+
+.input-message label{
+    display: block;
+    padding-bottom: 5px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.input-message textarea{
+    width: 530px;
+    background-color: transparent;
+    border: 1px solid #373867;
+    border-radius: 4px;
+    height: 102px;
+}
+
+.btn-form{
+    width: 255px;
+    height: 50px;
+    left: 294px;
+    top: 416px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #41426F;
+    margin-left: 300px;
+    margin-top: 13px;
+}
+
+.btn-form:hover{
+    width: 255px;
+    height: 50px;
+    left: 294px;
+    top: 416px;
+    background: #41426F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-left: 300px;
+    margin-top: 13px;
+}

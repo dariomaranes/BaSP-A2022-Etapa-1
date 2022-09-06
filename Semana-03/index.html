@@ -208,29 +208,37 @@
                 </p>
             </article>
         </section>
-        <section>
+        <section class="contact-form">
             <form>
-                <label for="name">
-                    Name
-                </label>
-                <input type="text" id="name">
-                <label for="email">
-                    Email
-                </label>
-                <input type="email" id="email">
-                <label for="category">
-                    Plase choose
-                </label>
-                <select name="category" id="category">
-                    <option value="systems">Systems</option>
-                    <option value="business">Business</option>
-                    <option value="human-resources">Human Resources</option>
-                </select>
-                <label>
-                    Message
-                </label>
-                <textarea placeholder="Enter your message" cols="30" rows="10"></textarea>
-                <button type="submit">Send</button>
+                <div class="input-contact">
+                    <label for="name">
+                        Name
+                    </label>
+                    <input type="text" id="name">
+                </div>
+                <div class="input-contact">
+                    <label for="email">
+                        Email
+                    </label>
+                    <input type="email" id="email">
+                </div>
+                <div class="input-area">
+                    <label for="category">
+                        Contact Area:
+                    </label>
+                    <select name="category" id="category">
+                        <option value="systems">Systems</option>
+                        <option value="business">Business</option>
+                        <option value="human-resources">Human Resources</option>
+                    </select>
+                </div>
+                <div class="input-message">
+                    <label>
+                        Message
+                    </label>
+                    <textarea placeholder="Enter your message" cols="30" rows="10"></textarea>
+                </div>
+                <button type="submit" class="btn-form">Send</button>
             </form>
         </section>
         <section id="about" class="border-blue">
