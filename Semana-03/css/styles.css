@@ -411,6 +411,7 @@ textarea{
 .about{
     display: inline-block;
     margin-bottom: 30px;
+    margin-top: 0px;
 }
 
 .about-content{
