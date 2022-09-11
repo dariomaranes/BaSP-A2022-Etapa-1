@@ -1,0 +1,23 @@
+footer{
+    width: 100%;
+    height: 147px;
+    background-color: #41426F;
+}
+
+footer p{
+    padding-top: 20px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.fa-brands{
+    color:#FFFFFF;
+    font-size: 48px;
+}
+
+.fa-brands:hover{
+    color:#AACE9B;
+    font-size: 48px;
+}
