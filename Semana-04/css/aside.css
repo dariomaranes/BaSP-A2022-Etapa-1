@@ -1,6 +1,7 @@
 aside{
+    width: 20%;
+    height: 100%;
     margin-top: 120px;
-    height: 959px;
     position: fixed;
     color: #FFFFFF;
     background-color: #41426F;
@@ -18,7 +19,7 @@ aside h2{
 }
 
 aside h3{
-    margin-top: 145px;
+    margin-top: 23px;
     width: 80px;
     border-bottom: 3px solid #AACE9B;
 }
@@ -30,8 +31,8 @@ aside h3{
 
 aside input{
     height: 38px;
-    width: 255px;
-    margin-bottom: 40px;
+    width: 100%;
+    margin-bottom: 23px;
     border-radius: 5px;
     padding-left: 30px;
     background-color: transparent;
@@ -46,40 +47,45 @@ aside input{
     background-position: 2px 3px;
 }
 
-nav li{
-    margin-bottom: 60px;
-    list-style-type: none;
+nav{
+    display: flex;
+    flex-direction: column;
 }
 
-nav li a{
+nav a{
+    margin-bottom: 23px;
+    list-style-type: none;
     text-align: center;
     font-weight: 700;
     font-size: 15px;
     color: #41426F;
-    padding: 20px 91px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border-radius: 5px;
     background: #FFFFFF;
     width: 100%;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
 }
 
-nav li a:hover{
+nav a:hover{
+    margin-bottom: 23px;
+    list-style-type: none;
     text-align: center;
     font-weight: 700;
     font-size: 15px;
     color: #FFFFFF;
-    padding: 20px 91px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border-radius: 5px;
     background: #AACE9B;
     width: 100%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
 }
 
 .aside-info{
-    margin-right: 16px;
     font-size: 13px;
     font-weight: 700;
     line-height: 18px;
-    text-align: left;
 }
 
 .aside-info-p{
@@ -96,7 +102,7 @@ nav li a:hover{
 }
 
 .ul-underline{
-    width: 250px;
+    width: 100%;
     border-bottom: 1px solid #AACE9B;
 }
 
