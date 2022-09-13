@@ -297,10 +297,16 @@ textarea{
 .about-content{
     display: flex;
     margin-top: 45px;
+    gap: 20px;
 }
 
-.about img{
+.about .div-img{
     flex: 1 0 20%;
+    background-image: url("../assets/img/image-trackgenix-about.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 5px;
     margin-bottom: 35px;
     height: 171px;
 }
