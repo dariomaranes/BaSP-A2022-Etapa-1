@@ -1,10 +1,10 @@
 main{
-    margin-top: 15px;
+    margin-top: 130px;
     margin-bottom: 35px;
 }
 
 main section{
-    margin: 45px 55px;
+    margin: 0px 30px;
 }
 
 section{
@@ -12,14 +12,37 @@ section{
 }
 
 .main-text{
-    width: 40%;
-    margin-top: 50px;
-    margin-bottom: 24px;
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 
-.intro img{
-    margin-top: 50px;
-    width: 60%;
+.intro{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+.flex-intro{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-img{
+    align-self: center;
+}
+
+.back-img{
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-size: 100%;
+    height: 215px;
+    width: 100%;
+    background-image: url(../assets/img/image-trackgenix-landing.png);
+    border-radius: 5px;
+    background-repeat: no-repeat;
 }
 
 .intro h2{
@@ -37,95 +60,111 @@ section{
 
 .intro div p{
     font-weight: 400;
-    font-size: 21px;
+    font-size: 15px;
     line-height: 25px;
-    width: 411px;
     margin-top: 12px;
     margin-bottom: 42px;
 }
 
-.img-border-radius{
-    border-radius: 5px;
-}
-
-.btn-main{
+.btn-main-mobile, .btn-main{
+    height: 47px;
+    margin-bottom: 25px;
+    margin-right: 10px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 16px 20px;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    text-align: center;
     color: #000000;
-    margin-left: 280px;
 }
 
-.btn-main:hover{
+.btn-main-mobile:hover, .btn-main:hover{
+    height: 47px;
+    margin-bottom: 25px;
+    margin-right: 10px;
     background: #AACE9B;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 16px 20px;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    text-align: center;
     color: #FFFFFF;
 }
 
+.btn-main{
+    display:none;
+}
+
+.main-features{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
 .main-features div{
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 50px;
-    margin-bottom: 20px;
-    width: 36%;
-    margin-left: 90px;
+    width: 354px;
     padding-bottom: 20px;
 }
 
 .main-features div h3{
     font-weight: 700;
-    font-size: 27px;
+    font-size: 25px;
     line-height: 60px;
     color: #000000;
 }
 
 .main-features div p{
+    margin-left: 72px;
     font-weight: 700;
     font-size: 14px;
     line-height: 16px;
-    margin-left: 70px;
 }
 
 .main-features div img{
     margin-right: 10px;
 }
 
-.why-use{
+.why-use-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 4px;
     margin-bottom: 35px;
 }
 
 .why-use h2{
-    width: 1500px;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 34px;
     line-height: 47px;
     margin-top: 40px;
-    border-bottom: 2px solid #373867;
-    width: 371px;
     color: #373867;
-    margin-left: 20px;
+    width: 350px;
+    border-bottom: 3px solid #373867;
 }
 
 .why-use article{
     margin-top: 50px;
-    width: 41%;
-    margin-left: 60px;
-    padding-bottom: 20px;
+    width: 350px;
+    padding-bottom: 10px;
+}
+
+.why-use article div{
+    display: flex;
 }
 
 .why-use h4{
     font-weight: 600;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 26px;
+    padding-bottom: 20px;
+    margin-left: 10px;
     color: #373867;
 }
 
@@ -134,7 +173,6 @@ section{
     font-size: 20px;
     line-height: 23px;
     color: #373867;
-    margin-left: 20px;
 }
 
 .why-use-img{
@@ -142,8 +180,11 @@ section{
 }
 
 .contact-form form{
-    width: 572px;
-    height: 465px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 480px;
     margin: 25px auto;
     background: #AACE9B;
     border-radius: 20px;
@@ -153,12 +194,6 @@ textarea{
     font-family: 'Roboto', sans-serif;
 }
 
-.input-contact{
-    width: 260px;
-    padding-left: 22px;
-    margin-top: 29px;
-}
-
 .input-contact label{
     padding-bottom: 5px;
     font-weight: 700;
@@ -166,17 +201,29 @@ textarea{
     line-height: 15px;
 }
 
+.flex-input{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.input-contact{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+}
+
 .input-contact input{
-    width: 260px;
+    width: 100%;
     height: 37px;
     background-color: transparent;
     border: 1px solid #373867;
     border-radius: 4px;
+    margin-top: 10px;
 }
 
 .input-area{
-    width: 520px;
-    padding-left: 22px;
     margin-top: 20px;
 }
 
@@ -188,16 +235,16 @@ textarea{
 }
 
 .input-area select{
-    width: 525px;
+    width: 100%;
     height: 37px;
     background-color: transparent;
     border: 1px solid #373867;
     border-radius: 4px;
+    margin-top: 10px;
 }
 
 .input-message{
-    padding-left: 22px;
-    margin-top: 105px;
+    margin-top: 29px;
 }
 
 .input-message label{
@@ -208,18 +255,16 @@ textarea{
 }
 
 .input-message textarea{
-    width: 530px;
+    width: 100%;
     background-color: transparent;
     border: 1px solid #373867;
     border-radius: 4px;
     height: 102px;
+    margin-top: 10px;
 }
 
 .btn-form{
-    width: 255px;
-    height: 50px;
-    left: 294px;
-    top: 416px;
+    align-self: flex-end;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
@@ -228,15 +273,11 @@ textarea{
     line-height: 18px;
     text-align: center;
     color: #41426F;
-    margin-left: 300px;
-    margin-top: 13px;
+    width: 100px;
+    margin-top: 10px;
 }
 
 .btn-form:hover{
-    width: 255px;
-    height: 50px;
-    left: 294px;
-    top: 416px;
     background: #41426F;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
@@ -245,28 +286,27 @@ textarea{
     line-height: 18px;
     text-align: center;
     color: #FFFFFF;
-    margin-left: 300px;
-    margin-top: 13px;
+    margin-top: 10px;
 }
 
 .about{
     margin-bottom: 30px;
-    margin-top: 0px;
+    margin-top: 22px;
 }
 
 .about-content{
-    width: 40%;
+    display: flex;
     margin-top: 45px;
-    margin-left: 20px;
 }
 
 .about img{
-    margin-top: 45px;
+    flex: 1 0 20%;
     margin-bottom: 35px;
-    width: 57%;
+    height: 171px;
 }
 
 .about h2{
+    margin-top: 40px;
     font-weight: 700;
     font-size: 30px;
     line-height: 35px;
@@ -275,25 +315,34 @@ textarea{
 }
 
 .about-content p{
-    margin-top: 15px;
+    flex: 1 0 30%;
+    order: 4;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 28px;
-    padding-right: 30px;
+    font-size: 13px;
+    line-height: 14px;
+    padding-left: 20px;
     margin-bottom: 30px;
 }
 
 .about-p{
-    font-size: 24px;
-    line-height: 28px;
-    margin-left: 20px;
+    font-size: 13px;
+    line-height: 14px;
+}
+
+.links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 30px;
 }
 
 .links div{
-    width: 25%;
-    padding-left: 50px;
-    margin-top: 50px;
-    margin-right: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 354px;
+    padding: 30px;
+    padding-bottom: 0px;
 }
 
 .links div h2{
@@ -318,5 +367,5 @@ textarea{
 }
 
 .vertical-line{
-    border-left: 3px solid #373867;
+    border-top: 3px solid #373867;
 }
