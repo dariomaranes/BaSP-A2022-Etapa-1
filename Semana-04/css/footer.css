@@ -5,12 +5,18 @@ footer{
     align-items: center;
     height: 147px;
     background-color: #41426F;
+    width: 100%;
+}
+
+footer div{
+    display: flex;
+    gap: 80px;
 }
 
 footer p{
     padding-top: 20px;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 18px;
     color: #FFFFFF;
 }
