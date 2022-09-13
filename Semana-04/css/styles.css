@@ -75,8 +75,8 @@ aside{
     .about-content p{
         order: 0;
     }
-    .about img{
-        flex: 1 0 70%;
+    .about .div-img{
+        flex: 1 0 60%;
     }
     footer{
         margin-left: 20%;
