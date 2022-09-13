@@ -6,9 +6,7 @@ Trackgenix is a powerfull web system that facilitates the recording of hours wor
 
 ## How to Open
 
-- Enter to https://github.com/mara666/BaSP-A2022-Etapa-1 and download the current directory
-
-- Open the _index.html_ file with [Google Chrome](https://www.google.com/intl/es-419/chrome/)
+- Open the following link [Trackgenix](https://mara666.github.io/BaSP-A2022-Etapa-1/Semana-04/)
 
 - Enjoy the software
 
@@ -23,6 +21,10 @@ I used white icons downloaded from the Figma project and due to the problem they
 
 ### Week 03
 
-I applioed CSS to HTML structure and did structural changes on it relationed with the styles.
+I applied CSS to HTML structure and did structural changes on it relationed with the styles.
+
+## Week 04
+
+I implemented Flexbox CSS properties and made structural changes to adapt flex.
 
 _By Darío Marañes_
