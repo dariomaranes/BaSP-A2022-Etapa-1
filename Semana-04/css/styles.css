@@ -16,38 +16,23 @@ a{
     flex-wrap: wrap;
 }
 
-aside{
-    display: none;
-}
-
-.main-img{
-    display: none;
-}
-
-.btn-main{
-    display: none;
-}
-
 @media only screen and (min-width: 768px){
-    .intro .back-img{
+    .back-img{
         display: none;
     }
-    .main-img{
+    .main-img, .btn-main{
         display: initial;
     }
-    .intro .main-img img{
+    .main-img img{
         width: 380px;
     }
-    .intro .main-text{
+    .main-text{
         width: 50%;
-    }
-    .intro .btn-main{
-        display: initial;
     }
     .links div{
         max-width: 33%;
     }
-    .links .vertical-line{
+    .vertical-line{
         border-left: 3px solid #373867;
         border-top: none;
     }
@@ -57,7 +42,7 @@ aside{
 }
 
 @media only screen and (min-width: 1024px){
-    header i.fa-solid.fa-bars{
+    i.fa-solid.fa-bars{
         display: none;
     }
     main{
@@ -66,7 +51,7 @@ aside{
     aside{
         display:initial;
     }
-    .intro .main-img img{
+    .main-img img{
         width: 100%;
     }
     .main-text p{
@@ -75,7 +60,7 @@ aside{
     .about-content p{
         order: 0;
     }
-    .about .div-img{
+    .div-img{
         flex: 1 0 60%;
     }
     footer{

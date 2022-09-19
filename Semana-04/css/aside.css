@@ -5,6 +5,7 @@ aside{
     position: fixed;
     color: #FFFFFF;
     background-color: #41426F;
+    display: none;
 }
 
 aside h2{
@@ -106,6 +107,6 @@ nav a:hover{
     border-bottom: 1px solid #AACE9B;
 }
 
-div div ul li a{
+.white-links{
     color: #FFFFFF;
 }

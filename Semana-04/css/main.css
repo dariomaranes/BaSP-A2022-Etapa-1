@@ -1,3 +1,5 @@
+/* Global Main Styles */
+
 main{
     margin-top: 130px;
     margin-bottom: 35px;
@@ -16,9 +18,9 @@ section{
     padding-bottom: 10px;
 }
 
+/* Section intro */
+
 .intro{
-    display: flex;
-    flex-direction: column;
     margin-top: 25px;
     margin-bottom: 35px;
 }
@@ -30,11 +32,11 @@ section{
 
 .main-img{
     align-self: center;
+    display: none;
 }
 
 .back-img{
     display: flex;
-    align-content: flex-end;
     justify-content: flex-end;
     align-items: flex-end;
     background-size: 100%;
@@ -98,6 +100,8 @@ section{
     display:none;
 }
 
+/* Section main-features */
+
 .main-features{
     display: flex;
     flex-wrap: wrap;
@@ -130,6 +134,8 @@ section{
 .main-features div img{
     margin-right: 10px;
 }
+
+/* Section why-use */
 
 .why-use-content{
     display: flex;
@@ -179,6 +185,8 @@ section{
     margin-right: 10px;
 }
 
+/* Section contact-form */
+
 .contact-form form{
     padding: 20px;
     display: flex;
@@ -208,8 +216,6 @@ textarea{
 }
 
 .input-contact{
-    display: flex;
-    flex-direction: column;
     width: 100%;
     margin-top: 15px;
 }
@@ -289,6 +295,8 @@ textarea{
     margin-top: 10px;
 }
 
+/* Section about */
+
 .about{
     margin-bottom: 30px;
     margin-top: 22px;
@@ -324,16 +332,18 @@ textarea{
     flex: 1 0 30%;
     order: 4;
     font-weight: 400;
-    font-size: 13px;
-    line-height: 14px;
+    font-size: 24px;
+    line-height: 28px;
     padding-left: 20px;
     margin-bottom: 30px;
 }
 
 .about-p{
-    font-size: 13px;
-    line-height: 14px;
+    font-size: 24px;
+    line-height: 28px;
 }
+
+/* Section links */
 
 .links{
     display: flex;
