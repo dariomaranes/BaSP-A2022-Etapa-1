@@ -1,8 +1,6 @@
 aside{
-    width: 20%;
-    height: 100%;
+    flex: 1 0 20%;
     margin-top: 120px;
-    position: fixed;
     color: #FFFFFF;
     background-color: #41426F;
     display: none;

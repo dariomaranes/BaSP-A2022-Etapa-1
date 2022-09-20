@@ -5,6 +5,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: #41426F;
+    overflow: hidden;
 }
 
 a{
@@ -13,7 +14,17 @@ a{
 
 .flex-container{
     display: flex;
-    flex-wrap: wrap;
+    height: 100%;
+}
+
+.main-container{
+    display: flex;
+}
+
+.main-footer-container{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
 }
 
 @media only screen and (min-width: 768px){
@@ -45,9 +56,6 @@ a{
     i.fa-solid.fa-bars{
         display: none;
     }
-    main{
-        margin-left: 20%;
-    }
     aside{
         display:initial;
     }
@@ -62,8 +70,5 @@ a{
     }
     .div-img{
         flex: 1 0 60%;
-    }
-    footer{
-        margin-left: 20%;
     }
 }
