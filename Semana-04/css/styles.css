@@ -16,10 +16,6 @@ a{
     height: 100%;
 }
 
-.main-container{
-    display: flex;
-}
-
 .main-footer-container{
     display: flex;
     flex-direction: column;
