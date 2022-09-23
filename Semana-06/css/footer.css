@@ -1,0 +1,33 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #41426F;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+footer div{
+    display: flex;
+    gap: 80px;
+}
+
+footer p{
+    padding-top: 20px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.fa-brands{
+    color:#FFFFFF;
+    font-size: 48px;
+}
+
+.fa-brands:hover{
+    color:#AACE9B;
+    font-size: 48px;
+}
