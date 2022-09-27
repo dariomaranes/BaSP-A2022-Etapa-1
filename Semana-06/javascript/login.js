@@ -25,7 +25,7 @@ window.onload = function(){
             loginEmailSuccess = false;
         }else{
             loginEmail.classList.add("green-border");
-            arrayErrors[0] = loginEmail.value;
+            arrayErrors[0] = loginEmail.value.trim();
             loginEmailSuccess = true;
         }
     }
