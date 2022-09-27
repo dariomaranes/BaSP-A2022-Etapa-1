@@ -50,4 +50,9 @@ I corrected some Flexbox errors and made 6 (six) JS exercises with these importa
 - _For_
 - _Functions_
 
+### Week 06
+
+I created login and employee-signup HTML and CSS files, and then I applied JS to them creating one JS file for each one.
+Also I applied JS to contact form in index.html file.
+
 _By Darío Marañes_
