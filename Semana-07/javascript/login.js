@@ -6,7 +6,7 @@ window.onload = function(){
     var loginEmail = document.getElementById("login-email");
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var loginEmailAlert = document.createElement('p');
-    var loginEmailSuccess = false;
+    var isLoginEmailSuccess = false;
     loginEmailAlert.classList.add("red-font");
     loginEmail.onblur = validateEmail;
     loginEmail.onfocus = removeEmailAlerts;
@@ -16,17 +16,17 @@ window.onload = function(){
             loginEmailAlert.textContent = "* Email field is required";
             loginEmail.insertAdjacentElement("afterend", loginEmailAlert);
             arrayErrors[0] = 'Error! ' + loginEmailAlert.textContent;
-            loginEmailSuccess = false;
+            isLoginEmailSuccess = false;
         }else if(!(emailExpression.test(loginEmail.value))){
             loginEmail.classList.add("red-border");
             loginEmailAlert.textContent = "* Insert a valid email";
             loginEmail.insertAdjacentElement("afterend", loginEmailAlert);
             arrayErrors[0] = 'Error! ' + loginEmailAlert.textContent;
-            loginEmailSuccess = false;
+            isLoginEmailSuccess = false;
         }else{
             loginEmail.classList.add("green-border");
             arrayErrors[0] = loginEmail.value.trim();
-            loginEmailSuccess = true;
+            isLoginEmailSuccess = true;
         }
     }
     function removeEmailAlerts(){
@@ -37,7 +37,7 @@ window.onload = function(){
     //PASSWORD VALIDATION
     var loginPassword = document.getElementById("login-password");
     var loginPasswordAlert = document.createElement('p');
-    var loginPasswordSuccess = false;
+    var isLoginPasswordSuccess = false;
     loginPasswordAlert.classList.add("red-font");
     loginPassword.onblur = validatePassword;
     loginPassword.onfocus = removePasswordAlerts;
@@ -47,34 +47,52 @@ window.onload = function(){
             loginPasswordAlert.textContent = "* Password field is required";
             loginPassword.insertAdjacentElement("afterend", loginPasswordAlert);
             arrayErrors[1] = 'Error! ' + loginPasswordAlert.textContent;
-            loginPasswordSuccess = false;
+            isLoginPasswordSuccess = false;
         }else if(loginPassword.value.length < 8 && !hasNumbersAndLetters(loginPassword.value)){
             loginPassword.classList.add("red-border");
             loginPasswordAlert.textContent = "* Password must have minimun 8 characters includes numbers and letters";
             loginPassword.insertAdjacentElement("afterend", loginPasswordAlert);
             arrayErrors[1] = 'Error! ' + loginPasswordAlert.textContent;
-            loginPasswordSuccess = false;
+            isLoginPasswordSuccess = false;
         }else if(loginPassword.value.length < 8){
             loginPassword.classList.add("red-border");
             loginPasswordAlert.textContent = "* Password must have minimun 8 characters";
             loginPassword.insertAdjacentElement("afterend", loginPasswordAlert);
             arrayErrors[1] = 'Error! ' + loginPasswordAlert.textContent;
-            loginPasswordSuccess = false;
+            isLoginPasswordSuccess = false;
         }else if(!hasNumbersAndLetters(loginPassword.value)){
             loginPassword.classList.add("red-border");
             loginPasswordAlert.textContent = "* Password must have letters and numbers";
             loginPassword.insertAdjacentElement("afterend", loginPasswordAlert);
             arrayErrors[1] = 'Error! ' + loginPasswordAlert.textContent;
-            loginPasswordSuccess = false;
+            isLoginPasswordSuccess = false;
         }else{
             loginPassword.classList.add('green-border');
             arrayErrors[1] = loginPassword.value;
-            loginPasswordSuccess = true;
+            isLoginPasswordSuccess = true;
         }
     }
     function removePasswordAlerts(){
         loginPassword.classList.remove('red-border', 'green-border');
         loginPasswordAlert.remove();
+    }
+
+    //FETCH FUNCTION
+    function fetchData(email, password){
+        fetch('https://basp-m2022-api-rest-server.herokuapp.com/login?email='+email+'&password='+password)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(resp){
+                if(resp.success){
+                    alert(resp.msg);
+                }else{
+                    throw resp;
+                }
+            })
+            .catch(function(error){
+                alert(error.msg);
+            })
     }
 
     //CLICK LOGIN BUTTON
@@ -83,10 +101,8 @@ window.onload = function(){
         e.preventDefault();
         validateEmail(loginEmail);
         validatePassword(loginPassword);
-        if(loginPasswordSuccess && loginEmailSuccess){
-            alert("Welcome!\nEmail: " + loginEmail.value + "\nPassword: " + loginPassword.value);
-        }else{
-            alert("Please check data!" + "\nEmail: " + arrayErrors[0] + "\nPassword: " + arrayErrors[1]);
+        if(isLoginPasswordSuccess && isLoginEmailSuccess){
+            fetchData(loginEmail.value, loginPassword.value);
         }
     }
 
