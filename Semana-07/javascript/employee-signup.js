@@ -59,15 +59,14 @@ window.onload = function(){
             lastName.insertAdjacentElement('afterend', lastNameAlert);
             arrayErrors[1] = 'Error! ' + lastNameAlert.textContent;
             lastNameSuccess = false;
-        }else if(lastName.value.length < 4 && !hasLettersOrSpaces(name.value)){
+        }else if(lastName.value.length < 4 || !hasLettersOrSpaces(name.value)){
             lastName.classList.add('red-border');
             lastNameAlert.textContent = "* Last Name must have minimun 4 letters";
             lastName.insertAdjacentElement('afterend', lastNameAlert);
             arrayErrors[1] = 'Error! ' + lastNameAlert.textContent;
             lastNameSuccess = false;
-        }else if(lastName.value < 4){
-            lastName.classList.add('green-border');
-        }else if(!hasLettersOrSpaces(lastName.value)){
+        }
+        else if(!hasLettersOrSpaces(lastName.value)){
             lastName.classList.add('red-border');
             lastNameAlert.textContent = "* Last Name must have only letters";
             lastName.insertAdjacentElement('afterend', lastNameAlert);
@@ -125,6 +124,7 @@ window.onload = function(){
     var birthDate = document.getElementById('birth-date');
     var birthDateAlert = document.createElement('p');
     var birthDateSuccess = false;
+    var birthFormated = '';
     birthDateAlert.classList.add('red-font');
     birthDate.onblur = validateBirth;
     birthDate.onfocus = removeBirthAlerts;
@@ -138,7 +138,7 @@ window.onload = function(){
         }else{
             birthDate.classList.add('green-border');
             var [year, month, day] = birthDate.value.split('-');
-            var birthFormated = [day, month, year].join('/');
+            birthFormated = [month, day, year].join('/');
             arrayErrors[3] = birthFormated;
             birthDateSuccess = true;
         }
@@ -223,7 +223,14 @@ window.onload = function(){
             address.insertAdjacentElement('afterend', addressAlert);
             arrayErrors[5] = 'Error! ' + addressAlert.textContent;
             addressSuccess = false;
-        }else{
+        }else if(!address.value.includes(' ')){
+            address.classList.add('red-border');
+            addressAlert.textContent = "* Address must include 1 space between numbers and letters";
+            address.insertAdjacentElement('afterend', addressAlert);
+            arrayErrors[5] = 'Error! ' + addressAlert.textContent;
+            addressSuccess = false;
+        }
+        else{
             address.classList.add('green-border');
             arrayErrors[5] = address.value.trim();
             addressSuccess = true;
@@ -254,13 +261,8 @@ window.onload = function(){
             city.insertAdjacentElement('afterend', cityAlert);
             arrayErrors[6] = 'Error! ' + cityAlert.textContent;
             citySuccess = false;
-        }else if(city.value.length >= 4 && !hasNumbersAndLetters(city.value)){
-            city.classList.add('red-border');
-            cityAlert.textContent = "* City must have alphabetic and numeric characters";
-            city.insertAdjacentElement('afterend', cityAlert);
-            arrayErrors[6] = 'Error! ' + cityAlert.textContent;
-            citySuccess = false;
-        }else{
+        }
+        else{
             city.classList.add('green-border');
             arrayErrors[6] = city.value.trim();
             citySuccess = true;
@@ -414,14 +416,64 @@ window.onload = function(){
         repeatPasswordAlert.remove();
     }
 
-    //SIGN UP LOGIN BUTTON
+    function fetchData(name, lastName, suId, birthFormated, phoneNumber, address, city, addressCode,
+                email, suPassword){
+        var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup?';
+        fetch(url +'name='+name+'&lastName='+lastName+'&dni='+suId+'&dob='+birthFormated
+                    +'&phone='+phoneNumber+'&address='+address+'&city='+city+'&zip='+addressCode
+                    +'&email='+email+'&password='+suPassword)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (response) {
+                if (response.success) {
+                    return response;
+                } else {
+                    throw response;
+                }
+            })
+            .then(function (resp) {
+                localStorage.setItem('id', resp.data.id);
+                localStorage.setItem('name', resp.data.name);
+                localStorage.setItem('lastName', resp.data.lastName);
+                localStorage.setItem('dni', resp.data.dni);
+                localStorage.setItem('dob', resp.data.dob);
+                localStorage.setItem('phone', resp.data.phone);
+                localStorage.setItem('address', resp.data.address);
+                localStorage.setItem('city', resp.data.city);
+                localStorage.setItem('zip', resp.data.zip);
+                localStorage.setItem('email', resp.data.email);
+                localStorage.setItem('password', resp.data.password);
+                alert(resp.msg);
+            })
+            .catch(function (error) {
+                errorText = 'Some inputs are invalid, please check!\n\n';
+                for(i=0; i<error.errors.length; i++){
+                    errorText += error.errors[i].msg + '\n';
+                }
+                alert(errorText);
+            });
+    }
+
+    //SET INPUT VALUES ON ONLOAD, SAVED IN LOCAL STORAGE
+    name.value = localStorage.getItem('name');
+    lastName.value = localStorage.getItem('lastName');
+    suId.value = localStorage.getItem('dni');
+    birthDate.value = localStorage.getItem('dob');
+    phoneNumber.value = localStorage.getItem('phone');
+    address.value = localStorage.getItem('address');
+    city.value = localStorage.getItem('city');
+    addressCode.value = localStorage.getItem('zip');
+    email.value = localStorage.getItem('email');
+
+    //SIGN UP BUTTON
     var signUpButton = document.getElementById("btn-signup");
     signUpButton.onclick = function(e){
         e.preventDefault();
         validateName(name);
         validateLastName(lastName);
         validateId(suId);
-        validateBirth(birthDate);
+        validateBirth(birthFormated);
         validatePhoneNumber(phoneNumber);
         validateAddress(address);
         validateCity(city);
@@ -431,16 +483,8 @@ window.onload = function(){
         validateRepeatPassword(repeatPassword);
         if(nameSuccess && lastNameSuccess && suIdSuccess && birthDateSuccess && phoneNumberSuccess && addressSuccess
             && citySuccess && addressCodeSuccess && emailSuccess && suPasswordSuccess && repeatPasswordSuccess){
-                alert("Welcome to Trackgenix! \nName: " + name.value + "\nLast Name: " + lastName.value + "\nID: " + suId.value
-                + "\nDate of Birth: " + birthFormated + "\nPhone Number: " + phoneNumber.value
-                + "\nAddress: " + address.value + "\nCity: " + city.value + "\nAddress Code: " + addressCode.value
-                + "\nEmail: " + email.value + "\nPassword: " + suPassword.value
-                + "\nRepeat Password: " + repeatPassword.value);
-        }else{
-            alert("Please check data " + "\nName: " + arrayErrors[0] + "\nLast Name: " + arrayErrors[1]
-            + "\nID: " + arrayErrors[2] + "\nDate of Birth: " + arrayErrors[3] + "\nPhone Number: " + arrayErrors[4]
-            + "\nAddress: " + arrayErrors[5] + "\nCity: " + arrayErrors[6] + "\nAddress Code: " + arrayErrors[7]
-            + "\nEmail: " + arrayErrors[8] + "\nPassword: " + arrayErrors[9] + "\nRepeat Password: " + arrayErrors[10]);
+            fetchData(name.value, lastName.value, suId.value, birthFormated, phoneNumber.value, address.value,
+                city.value, addressCode.value, email.value, suPassword.value, repeatPassword.value)
         }
     }
 
