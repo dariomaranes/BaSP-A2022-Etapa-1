@@ -97,9 +97,9 @@ window.onload = function(){
             suId.insertAdjacentElement('afterend', suIdAlert);
             arrayErrors[2] = 'Error! ' + suIdAlert.textContent;
             suIdSuccess = false;
-        }else if(suId.value.length < 8){
+        }else if(suId.value.length < 7 || suId.value.length > 8){
             suId.classList.add('red-border');
-            suIdAlert.textContent = "* ID field must have minimun 8 characters";
+            suIdAlert.textContent = "* ID field must have between 7 and 8 numbers";
             suId.insertAdjacentElement('afterend', suIdAlert);
             arrayErrors[2] = 'Error! ' + suIdAlert.textContent;
             suIdSuccess = false;
@@ -459,7 +459,8 @@ window.onload = function(){
     name.value = localStorage.getItem('name');
     lastName.value = localStorage.getItem('lastName');
     suId.value = localStorage.getItem('dni');
-    birthDate.value = localStorage.getItem('dob');
+    birthDate.value += localStorage.getItem('dob').substring(6, 10) + '-' + localStorage.getItem('dob').substring(0, 2) +
+        '-' + localStorage.getItem('dob').substring(3, 5);
     phoneNumber.value = localStorage.getItem('phone');
     address.value = localStorage.getItem('address');
     city.value = localStorage.getItem('city');
