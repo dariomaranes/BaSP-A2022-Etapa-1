@@ -444,14 +444,18 @@ window.onload = function(){
                 localStorage.setItem('zip', resp.data.zip);
                 localStorage.setItem('email', resp.data.email);
                 localStorage.setItem('password', resp.data.password);
-                alert(resp.msg);
+                modalMsg.classList.add("back-green");
+                modalAlert.textContent = resp.msg;
+                modalMsg.appendChild(modalAlert);
             })
             .catch(function (error) {
                 errorText = 'Some inputs are invalid, please check!\n\n';
                 for(i=0; i<error.errors.length; i++){
                     errorText += error.errors[i].msg + '\n';
                 }
-                alert(errorText);
+                modalMsg.classList.add("back-red");
+                modalAlert.textContent = errorText;
+                modalMsg.appendChild(modalAlert);
             });
     }
 
@@ -485,8 +489,15 @@ window.onload = function(){
         if(nameSuccess && lastNameSuccess && suIdSuccess && birthDateSuccess && phoneNumberSuccess && addressSuccess
             && citySuccess && addressCodeSuccess && emailSuccess && suPasswordSuccess && repeatPasswordSuccess){
             fetchData(name.value, lastName.value, suId.value, birthFormated, phoneNumber.value, address.value,
-                city.value, addressCode.value, email.value, suPassword.value, repeatPassword.value)
+                city.value, addressCode.value, email.value, suPassword.value);
+        }else{
+            modalAlert.textContent = "Please check data " + "\nName: " + arrayErrors[0] + "\nLast Name: " + arrayErrors[1]
+            + "\nID: " + arrayErrors[2] + "\nDate of Birth: " + arrayErrors[3] + "\nPhone Number: " + arrayErrors[4]
+            + "\nAddress: " + arrayErrors[5] + "\nCity: " + arrayErrors[6] + "\nAddress Code: " + arrayErrors[7]
+            + "\nEmail: " + arrayErrors[8] + "\nPassword: " + arrayErrors[9] + "\nRepeat Password: " + arrayErrors[10];
+            modalMsg.appendChild(modalAlert);
         }
+        modal.style.display = "block";
     }
 
     //CLICK BACK BUTTON
@@ -554,5 +565,26 @@ window.onload = function(){
             }
         }
         return num && char;
+    }
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    var modalMsg = document.getElementById("modal-msg");
+    var modalAlert = document.createElement('p');
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+        modalMsg.classList.remove("back-green", "back-red");
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            modalMsg.classList.remove("back-green", "back-red");
+        }
     }
 }
