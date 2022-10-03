@@ -85,13 +85,17 @@ window.onload = function(){
             })
             .then(function(resp){
                 if(resp.success){
-                    alert(resp.msg);
+                    modalMsg.classList.add("back-green");
+                    modalAlert.textContent = resp.msg;
+                    modalMsg.appendChild(modalAlert);
                 }else{
                     throw resp;
                 }
             })
             .catch(function(error){
-                alert(error.msg);
+                modalMsg.classList.add("back-red");
+                modalAlert.textContent = error.msg;
+                modalMsg.appendChild(modalAlert);
             })
     }
 
@@ -103,7 +107,11 @@ window.onload = function(){
         validatePassword(loginPassword);
         if(isLoginPasswordSuccess && isLoginEmailSuccess){
             fetchData(loginEmail.value, loginPassword.value);
+        }else{
+            modalAlert.textContent = "Please check data!\n" + "\nEmail: " + arrayErrors[0] + "\nPassword: " + arrayErrors[1];
+            modalMsg.appendChild(modalAlert);
         }
+        modal.style.display = "block";
     }
 
     //CLICK BACK BUTTON
@@ -150,5 +158,24 @@ window.onload = function(){
             }
         }
         return num && char;
+    }
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    var modalMsg = document.getElementById("modal-msg");
+    var modalAlert = document.createElement('p');
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
 }
