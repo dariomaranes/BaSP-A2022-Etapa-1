@@ -55,4 +55,11 @@ I corrected some Flexbox errors and made 6 (six) JS exercises with these importa
 I created login and employee-signup HTML and CSS files, and then I applied JS to them creating one JS file for each one.
 Also I applied JS to contact form in index.html file.
 
+### Week 07
+
+I continued working with login and employee-sign-up JS files. I add requests to API using fetch.
+If you want to try to login, you can only access successfully using this credentials:
+email: rose@radiumrocket.com password: BaSP2022.
+Finally I replace login and employee-sign-up alerts for modals.
+
 _By Darío Marañes_
