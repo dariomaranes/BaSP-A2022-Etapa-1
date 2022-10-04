@@ -147,12 +147,17 @@
 }
 
 /* Modal Content/Box */
-.modal-content {
+.modal-header{
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 20px;
     border: 1px solid #888;
     width: 50%;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    width: 100%;
+    padding: 20px;
 }
 
 .back-green{
@@ -171,6 +176,8 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin-top: 20px;
+    margin-right: 20px;
 }
 
 .close:hover,

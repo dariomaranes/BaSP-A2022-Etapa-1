@@ -433,6 +433,7 @@ window.onload = function(){
                 }
             })
             .then(function (resp) {
+                localStorage.setItem('hasData', 'value');
                 localStorage.setItem('id', resp.data.id);
                 localStorage.setItem('name', resp.data.name);
                 localStorage.setItem('lastName', resp.data.lastName);
@@ -449,27 +450,33 @@ window.onload = function(){
                 modalMsg.appendChild(modalAlert);
             })
             .catch(function (error) {
-                errorText = 'Some inputs are invalid, please check!\n\n';
-                for(i=0; i<error.errors.length; i++){
-                    errorText += error.errors[i].msg + '\n';
-                }
-                modalMsg.classList.add("back-red");
+                errorText = 'Some inputs are invalid, please check!';
                 modalAlert.textContent = errorText;
                 modalMsg.appendChild(modalAlert);
+                for(i=0; i<error.errors.length; i++){
+                    var paragraph = document.createElement('p');
+                    paragraph.innerText = error.errors[i].msg;
+                    modalMsg.appendChild(paragraph);
+                }
+                modalMsg.classList.add("back-red");
             });
     }
 
     //SET INPUT VALUES ON ONLOAD, SAVED IN LOCAL STORAGE
-    name.value = localStorage.getItem('name');
-    lastName.value = localStorage.getItem('lastName');
-    suId.value = localStorage.getItem('dni');
-    birthDate.value += localStorage.getItem('dob').substring(6, 10) + '-' + localStorage.getItem('dob').substring(0, 2) +
-        '-' + localStorage.getItem('dob').substring(3, 5);
-    phoneNumber.value = localStorage.getItem('phone');
-    address.value = localStorage.getItem('address');
-    city.value = localStorage.getItem('city');
-    addressCode.value = localStorage.getItem('zip');
-    email.value = localStorage.getItem('email');
+    if(window.localStorage.hasOwnProperty('hasData')){
+        name.value = localStorage.getItem('name');
+        lastName.value = localStorage.getItem('lastName');
+        suId.value = localStorage.getItem('dni');
+        birthDate.value += localStorage.getItem('dob').substring(6, 10)
+                        + '-' + localStorage.getItem('dob').substring(0, 2)
+                        + '-' + localStorage.getItem('dob').substring(3, 5);
+        phoneNumber.value = localStorage.getItem('phone');
+        address.value = localStorage.getItem('address');
+        city.value = localStorage.getItem('city');
+        addressCode.value = localStorage.getItem('zip');
+        email.value = localStorage.getItem('email');
+        suPassword.value = localStorage.getItem('password');
+    }
 
     //SIGN UP BUTTON
     var signUpButton = document.getElementById("btn-signup");
@@ -491,11 +498,11 @@ window.onload = function(){
             fetchData(name.value, lastName.value, suId.value, birthFormated, phoneNumber.value, address.value,
                 city.value, addressCode.value, email.value, suPassword.value);
         }else{
-            modalAlert.textContent = "Please check data " + "\nName: " + arrayErrors[0] + "\nLast Name: " + arrayErrors[1]
-            + "\nID: " + arrayErrors[2] + "\nDate of Birth: " + arrayErrors[3] + "\nPhone Number: " + arrayErrors[4]
-            + "\nAddress: " + arrayErrors[5] + "\nCity: " + arrayErrors[6] + "\nAddress Code: " + arrayErrors[7]
-            + "\nEmail: " + arrayErrors[8] + "\nPassword: " + arrayErrors[9] + "\nRepeat Password: " + arrayErrors[10];
-            modalMsg.appendChild(modalAlert);
+            arrayErrors.forEach(function(element){
+                var paragraph = document.createElement('p');
+                paragraph.innerText = element;
+                modalMsg.appendChild(paragraph);
+            })
         }
         modal.style.display = "block";
     }
@@ -578,6 +585,7 @@ window.onload = function(){
     span.onclick = function() {
         modal.style.display = "none";
         modalMsg.classList.remove("back-green", "back-red");
+        modalMsg.innerHTML = "";
     }
 
     // When the user clicks anywhere outside of the modal, close it
@@ -585,6 +593,7 @@ window.onload = function(){
         if (event.target == modal) {
             modal.style.display = "none";
             modalMsg.classList.remove("back-green", "back-red");
+            modalMsg.innerHTML = "";
         }
     }
 }
