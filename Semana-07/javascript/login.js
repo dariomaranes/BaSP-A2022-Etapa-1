@@ -108,8 +108,13 @@ window.onload = function(){
         if(isLoginPasswordSuccess && isLoginEmailSuccess){
             fetchData(loginEmail.value, loginPassword.value);
         }else{
-            modalAlert.textContent = "Please check data!\n" + "\nEmail: " + arrayErrors[0] + "\nPassword: " + arrayErrors[1];
-            modalMsg.appendChild(modalAlert);
+            arrayErrors.forEach(function(element){
+                var paragraph = document.createElement('p');
+                paragraph.innerText = element;
+                modalMsg.appendChild(paragraph);
+            })
+            // modalAlert.textContent = "Please check data!\n" + "\nEmail: " + arrayErrors[0] + "\nPassword: " + arrayErrors[1];
+            // modalMsg.appendChild(modalAlert);
         }
         modal.style.display = "block";
     }
@@ -171,6 +176,7 @@ window.onload = function(){
     span.onclick = function() {
         modal.style.display = "none";
         modalMsg.classList.remove("back-green", "back-red");
+        modalMsg.innerHTML = "";
     }
 
     // When the user clicks anywhere outside of the modal, close it
@@ -178,6 +184,7 @@ window.onload = function(){
         if (event.target == modal) {
             modal.style.display = "none";
             modalMsg.classList.remove("back-green", "back-red");
+            modalMsg.innerHTML = "";
         }
     }
 }
